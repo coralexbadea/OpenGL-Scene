@@ -1,0 +1,61 @@
+cmake_minimum_required(VERSION 3.15)
+project(Laboratory_9_resources)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
+
+add_executable(Laboratory_9_resources
+        objects/cube/cube.mtl
+        objects/cube/cube.obj
+        objects/ground/2.png
+        objects/ground/ground.mtl
+        objects/ground/ground.obj
+        "objects/nanosuit/nanosuit/arm_dif.png"
+        "objects/nanosuit/nanosuit/arm_showroom_ddn.png"
+        "objects/nanosuit/nanosuit/arm_showroom_refl.png"
+        "objects/nanosuit/nanosuit/arm_showroom_spec.png"
+        "objects/nanosuit/nanosuit/body_dif.png"
+        "objects/nanosuit/nanosuit/body_showroom_ddn.png"
+        "objects/nanosuit/nanosuit/body_showroom_refl.png"
+        "objects/nanosuit/nanosuit/body_showroom_spec.png"
+        "objects/nanosuit/nanosuit/glass_ddn.png"
+        "objects/nanosuit/nanosuit/glass_dif.png"
+        "objects/nanosuit/nanosuit/glass_refl.png"
+        "objects/nanosuit/nanosuit/hand_dif.png"
+        "objects/nanosuit/nanosuit/hand_showroom_ddn.png"
+        "objects/nanosuit/nanosuit/hand_showroom_refl.png"
+        "objects/nanosuit/nanosuit/hand_showroom_spec.png"
+        "objects/nanosuit/nanosuit/helmet_diff.png"
+        "objects/nanosuit/nanosuit/helmet_showroom_ddn.png"
+        "objects/nanosuit/nanosuit/helmet_showroom_refl.png"
+        "objects/nanosuit/nanosuit/helmet_showroom_spec.png"
+        "objects/nanosuit/nanosuit/leg_dif.png"
+        "objects/nanosuit/nanosuit/leg_showroom_ddn.png"
+        "objects/nanosuit/nanosuit/leg_showroom_refl.png"
+        "objects/nanosuit/nanosuit/leg_showroom_spec.png"
+        "objects/nanosuit/nanosuit/LICENSE.txt"
+        "objects/nanosuit/nanosuit/nanosuit.blend"
+        "objects/nanosuit/nanosuit/nanosuit.mtl"
+        "objects/nanosuit/nanosuit/nanosuit.obj"
+        "objects/nanosuit/nanosuit/white.png"
+        objects/quad/quad.obj
+        shaders/lightCube.frag
+        shaders/lightCube.vert
+        shaders/screenQuad.frag
+        shaders/screenQuad.vert
+        shaders/shaderStart.frag
+        shaders/shaderStart.vert
+        Camera.cpp
+        Camera.hpp
+        main.cpp
+        Mesh.cpp
+        Mesh.hpp
+        Model3D.cpp
+        Model3D.hpp
+        Shader.cpp
+        Shader.hpp
+        stb_image.cpp
+        stb_image.h
+        tiny_obj_loader.cpp
+        tiny_obj_loader.h)

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Laboratory_9_resources"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Laboratory_9_resources">
+				<Option output="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug/Laboratory_9_resources" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/."/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 Laboratory_9_resources"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Laboratory_9_resources/fast">
+				<Option output="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug/Laboratory_9_resources" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/."/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 Laboratory_9_resources/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/cristina/Documents/Facultate/AN3/GP/Laboratory\ 9\ resources/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Camera.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Camera.hpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Mesh.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Mesh.hpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Model3D.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Model3D.hpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Shader.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/Shader.hpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/main.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/cube/cube.mtl">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/cube/cube.obj">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/ground/2.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/ground/ground.mtl">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/ground/ground.obj">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/LICENSE.txt">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/arm_dif.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/arm_showroom_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/arm_showroom_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/arm_showroom_spec.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/body_dif.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/body_showroom_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/body_showroom_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/body_showroom_spec.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/glass_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/glass_dif.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/glass_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/hand_dif.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/hand_showroom_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/hand_showroom_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/hand_showroom_spec.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/helmet_diff.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/helmet_showroom_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/helmet_showroom_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/helmet_showroom_spec.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/leg_dif.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/leg_showroom_ddn.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/leg_showroom_refl.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/leg_showroom_spec.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/nanosuit.blend">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/nanosuit.mtl">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/nanosuit.obj">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/nanosuit (1)/nanosuit/white.png">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/objects/quad/quad.obj">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/lightCube.frag">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/lightCube.vert">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/screenQuad.frag">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/screenQuad.vert">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/shaderStart.frag">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/shaders/shaderStart.vert">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/stb_image.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/stb_image.h">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/tiny_obj_loader.cpp">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/tiny_obj_loader.h">
+			<Option target="Laboratory_9_resources"/>
+		</Unit>
+		<Unit filename="/home/cristina/Documents/Facultate/AN3/GP/Laboratory 9 resources/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

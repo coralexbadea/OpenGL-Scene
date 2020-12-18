@@ -1,0 +1,315 @@
+The system is: Linux - 5.3.0-64-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/3.13.4/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_77c38/fast"
+/usr/bin/make -f CMakeFiles/cmTC_77c38.dir/build.make CMakeFiles/cmTC_77c38.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77c38.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_77c38.dir/testCCompiler.c.o   -c /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_77c38
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77c38.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_77c38.dir/testCCompiler.c.o  -o cmTC_77c38 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ba1d3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ba1d3.dir/build.make CMakeFiles/cmTC_ba1d3.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ba1d3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba1d3.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o  -o cmTC_ba1d3 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.2.1-9ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.2.1 20191008 (Ubuntu 9.2.1-9ubuntu2) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba1d3' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6j8Ojq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba1d3 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba1d3' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ba1d3/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ba1d3.dir/build.make CMakeFiles/cmTC_ba1d3.dir/build]
+  ignore line: [make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ba1d3]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba1d3.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o  -o cmTC_ba1d3 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.2.1-9ubuntu2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.2.1 20191008 (Ubuntu 9.2.1-9ubuntu2) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ba1d3' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6j8Ojq.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ba1d3 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6j8Ojq.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ba1d3] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+    arg [CMakeFiles/cmTC_ba1d3.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1da3d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1da3d.dir/build.make CMakeFiles/cmTC_1da3d.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1da3d.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_1da3d.dir/feature_tests.c.o   -c /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1da3d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1da3d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1da3d.dir/feature_tests.c.o  -o cmTC_1da3d 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_523e2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_523e2.dir/build.make CMakeFiles/cmTC_523e2.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_523e2.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_523e2.dir/feature_tests.c.o   -c /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_523e2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_523e2.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_523e2.dir/feature_tests.c.o  -o cmTC_523e2 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6ca70/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6ca70.dir/build.make CMakeFiles/cmTC_6ca70.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6ca70.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_6ca70.dir/feature_tests.c.o   -c /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6ca70
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ca70.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6ca70.dir/feature_tests.c.o  -o cmTC_6ca70 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_91d43/fast"
+/usr/bin/make -f CMakeFiles/cmTC_91d43.dir/build.make CMakeFiles/cmTC_91d43.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91d43.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_91d43.dir/CheckIncludeFile.c.o   -c /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_91d43
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91d43.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_91d43.dir/CheckIncludeFile.c.o  -o cmTC_91d43 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7c880/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7c880.dir/build.make CMakeFiles/cmTC_7c880.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7c880.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7c880.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7c880
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c880.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_7c880.dir/CheckFunctionExists.c.o  -o cmTC_7c880 -lpthread 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e3bdb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e3bdb.dir/build.make CMakeFiles/cmTC_e3bdb.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e3bdb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_e3bdb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e3bdb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3bdb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    -rdynamic CMakeFiles/cmTC_e3bdb.dir/CheckFunctionExists.c.o  -o cmTC_e3bdb /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_63825/fast"
+/usr/bin/make -f CMakeFiles/cmTC_63825.dir/build.make CMakeFiles/cmTC_63825.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63825.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_63825.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_63825
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63825.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname    -rdynamic CMakeFiles/cmTC_63825.dir/CheckFunctionExists.c.o  -o cmTC_63825 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bffed/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bffed.dir/build.make CMakeFiles/cmTC_bffed.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bffed.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_bffed.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_bffed
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bffed.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_bffed.dir/CheckFunctionExists.c.o  -o cmTC_bffed 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f8918/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f8918.dir/build.make CMakeFiles/cmTC_f8918.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8918.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_f8918.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f8918
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8918.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove    -rdynamic CMakeFiles/cmTC_f8918.dir/CheckFunctionExists.c.o  -o cmTC_f8918 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b43ab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b43ab.dir/build.make CMakeFiles/cmTC_b43ab.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b43ab.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_b43ab.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b43ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b43ab.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat    -rdynamic CMakeFiles/cmTC_b43ab.dir/CheckFunctionExists.c.o  -o cmTC_b43ab 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0670a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0670a.dir/build.make CMakeFiles/cmTC_0670a.dir/build
+make[1]: Entering directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0670a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_0670a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0670a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0670a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    -rdynamic CMakeFiles/cmTC_0670a.dir/CheckFunctionExists.c.o  -o cmTC_0670a -lICE 
+make[1]: Leaving directory '/home/cristina/Downloads/Laboratory_7_resources_part_1/glfw-3.3.2/CMakeFiles/CMakeTmp'
+
+
