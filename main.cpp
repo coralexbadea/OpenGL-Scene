@@ -87,15 +87,16 @@ float MODEL_BRIGHTNESS = 1;
 
 // FPS
 double lastTime = glfwGetTime();
+double currentTimeStamp;
 int nbFrames = 0;
-
+bool renderingNarative = false;
 
 
 // Timing
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 float currentFrame;
-
+double globalBegin;
 
 
 
@@ -138,25 +139,32 @@ std::vector<const GLchar*> faces;
 
 
 gps::Camera myCamera(
-        glm::vec3(0.0f, 20.0f, 5.5f),
-        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(-20.0f, 4.0f, 50.0f),
+        glm::vec3(0.0f, 3.0f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f));
 //camera stuff
 GLfloat cameraSpeed = 0.1f;
 float lastX = glWindowWidth / 2.0f;
 float lastY =  glWindowHeight / 2.0f;
 float yaw        = 0.0f;
-float pitch     =  90.0f;
+float pitch     =  -70.0f;
 bool firstMouse = true;
 //
 
 bool pressedKeys[1024];
-float angleY = 0.0f;
+float angleY = 50.0f;
 GLfloat lightAngle;
 GLfloat defaultLightAngle = 1.0f;
 
+int state = 0;
+bool firstPass = true;
 //models
 gps::Model3D nanosuit;
+gps::Model3D alien;
+gps::Model3D trooper;
+gps::Model3D mech;
+gps::Model3D cage;
+gps::Model3D cage1;
 gps::Model3D ground;
 gps::Model3D lightCube;
 gps::Model3D lightCube1;
@@ -234,36 +242,31 @@ void keyboardCallback(GLFWwindow *window, int key, int scancode, int action, int
 
 
 void processMovement() {
-    if (pressedKeys[GLFW_KEY_Q]) {
-        angleY -= 1.0f;
-    }
+     if(!renderingNarative){
+        if (pressedKeys[GLFW_KEY_W]) {
+            myCamera.move(gps::MOVE_FORWARD, cameraSpeed);
+        }
 
-    if (pressedKeys[GLFW_KEY_E]) {
-        angleY += 1.0f;
-    }
+        if (pressedKeys[GLFW_KEY_S]) {
+            myCamera.move(gps::MOVE_BACKWARD, cameraSpeed);
+        }
 
-    if (pressedKeys[GLFW_KEY_J]) {
-        lightAngle += 1.0f;
-    }
+        if (pressedKeys[GLFW_KEY_A]) {
+            myCamera.move(gps::MOVE_LEFT, cameraSpeed);
+        }
 
-    if (pressedKeys[GLFW_KEY_L]) {
-        lightAngle -= 1.0f;
+        if (pressedKeys[GLFW_KEY_D]) {
+            myCamera.move(gps::MOVE_RIGHT, cameraSpeed);
+        }
     }
-
-    if (pressedKeys[GLFW_KEY_W]) {
-        myCamera.move(gps::MOVE_FORWARD, cameraSpeed);
+    if (pressedKeys[GLFW_KEY_N]) {
+        renderingNarative = true;
+        state = 0;
+        firstPass = true;
+        globalBegin = glfwGetTime();
     }
-
-    if (pressedKeys[GLFW_KEY_S]) {
-        myCamera.move(gps::MOVE_BACKWARD, cameraSpeed);
-    }
-
-    if (pressedKeys[GLFW_KEY_A]) {
-        myCamera.move(gps::MOVE_LEFT, cameraSpeed);
-    }
-
-    if (pressedKeys[GLFW_KEY_D]) {
-        myCamera.move(gps::MOVE_RIGHT, cameraSpeed);
+    if (pressedKeys[GLFW_KEY_B]) {
+        renderingNarative = false;
     }
 }
 
@@ -368,7 +371,12 @@ void initOpenGLState() {
 void initObjects() {
 
     faces.push_back("textures/skybox/right.tga");faces.push_back("textures/skybox/left.tga");faces.push_back("textures/skybox/top.tga");faces.push_back("textures/skybox/bottom.tga");faces.push_back("textures/skybox/back.tga");faces.push_back("textures/skybox/front.tga"); 
-    nanosuit.LoadModel("objects/nanosuit/nanosuit.obj");
+    nanosuit.LoadModel("objects/nanosuit/RoboCop.obj");
+    alien.LoadModel("objects/alien/alien.obj");
+    mech.LoadModel("objects/mech/spaceship.obj");
+    cage.LoadModel("objects/cage/untitled.obj");
+    cage1.LoadModel("objects/cage/cage.obj");
+    trooper.LoadModel("objects/trooper/trooper-storm.obj");
     ground.LoadModel("objects/ground/ground.obj");
     lightCube.LoadModel("objects/cube/cube.obj");
     screenQuad.LoadModel("objects/quad/quad.obj");
@@ -507,31 +515,25 @@ glm::mat4 computeLightSpaceTrMatrix(int number) {
     
 }
 
+
+float delta = 0;
+float movementSpeed = 2; // units per second
+void updateDelta(double elapsedSeconds) {
+	delta = delta + movementSpeed * elapsedSeconds;
+}
+double lastTimeStamp = glfwGetTime();
+
+
+
 void drawObjects(gps::Shader shader, bool depthPass) {
 
     shader.useShaderProgram();
 
-    model = glm::rotate(glm::mat4(1.0f), glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
-   
-    
-     model = glm::translate(model, glm::vec3(0.1f, 2.0f, 0));
-    
-    glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
-        
-    // do not send the normal matrix if we are rendering in the depth map
-    if (!depthPass) {
-        normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
-        glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
-    }
-    
-    nanosuit.Draw(shader);
-    
 
     model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-    model = glm::scale(model, glm::vec3(2.0f));
+    model = glm::scale(model, glm::vec3(2.5f));
     glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
-    
    
     // do not send the normal matrix if we are rendering in the depth map
     if (!depthPass) {
@@ -541,7 +543,445 @@ void drawObjects(gps::Shader shader, bool depthPass) {
 
     ground.Draw(shader);
     
- 
+    model = glm::translate(glm::mat4(1.0f), glm::vec3(-20.0f, 1.0f, 45.0f));
+    model = glm::scale(model, glm::vec3(2.0f));
+    glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+   
+    // do not send the normal matrix if we are rendering in the depth map
+    if (!depthPass) {
+        normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+        glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+    }
+
+    ground.Draw(shader);
+    
+     model = glm::rotate(glm::mat4(1.0f), glm::radians(30.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::translate(model, glm::vec3(-8.0f, 1.0f, -7.0f));    
+    model = glm::scale(model, glm::vec3(2.0f));
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+   mech.Draw(shader);
+  
+
+   
+    
+   currentTimeStamp = glfwGetTime();
+   myCamera.rotate(yaw, pitch);
+    ///
+        
+       ///     
+            
+    if(renderingNarative){
+        
+        if (state == 0){
+        if(firstPass){
+            myCamera.cameraPosition =  glm::vec3(-20.0f, 4.0f, 50.0f);
+            firstPass = false;
+            yaw        = 0.0f;
+            pitch     =  -70.0f;
+            myCamera.rotate(yaw, pitch);
+       
+        }
+        model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+       cage1.Draw(shader);
+       
+            myCamera.move(gps::MOVE_FORWARD, 10*(currentTimeStamp - lastTimeStamp));
+                
+             model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        
+             model = glm::rotate(model, glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
+       
+            
+                 
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+            
+        }
+        else if (state == 1){
+        model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+       cage1.Draw(shader);
+            if(angleY > -30.0f)
+                angleY -= delta;
+           
+       
+
+            model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+            model = glm::rotate(model, glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
+         
+             
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+           
+        }
+        else if (state == 2){
+        model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+        cage1.Draw(shader);
+       if(angleY < 50.0f)
+                angleY += delta;
+      model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+            model = glm::rotate(model, glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
+         
+             
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+            
+                
+        }
+        else if (state == 3){
+            model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+       cage1.Draw(shader);
+       
+            model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-5.0f, 1.0f, 5.0f));
+            model = glm::scale(model, glm::vec3(50.0f)); 
+            
+            model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-3.0f, 1.0f, -15.0f));
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+            trooper.Draw(shader);
+            
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-1.0f, 1.0f, -19.0f));
+
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+            trooper.Draw(shader);
+            
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-2.0f, 1.0f, -23.0f));
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+           trooper.Draw(shader);
+             model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+            model = glm::rotate(model, glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
+         
+             
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+            
+            if(pitch < 8)
+                pitch += 5*delta;
+                myCamera.rotate(yaw, pitch);
+                       
+        }
+        else if (state == 4){
+         model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-5.0f, 1.0f, 5.0f));
+            model = glm::scale(model, glm::vec3(50.0f)); 
+            
+            model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-3.0f, 1.0f, -15.0f));
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+            trooper.Draw(shader);
+            
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-1.0f, 1.0f, -19.0f));
+
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+            trooper.Draw(shader);
+            
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+            model = glm::translate(model, glm::vec3(-2.0f, 1.0f, -23.0f));
+            model = glm::scale(model, glm::vec3(70.0f)); 
+            
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+           
+           trooper.Draw(shader);
+           
+            model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -2.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+        
+       cage.Draw(shader);
+       model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+
+            model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+         
+             
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+            
+            if(pitch > -50)
+                pitch -= 5*delta;
+                myCamera.rotate(yaw, pitch);
+        }
+    }else {
+    
+    
+          model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-0.1f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.08f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       alien.Draw(shader);
+       
+       model = glm::rotate(glm::mat4(1.0f), glm::radians(230.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+           
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(-3.0f, 1.0f, -4.0f));
+        model = glm::scale(model, glm::vec3(0.1f));
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+        
+       cage1.Draw(shader);
+         
+             model = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        
+             model = glm::rotate(model, glm::radians(angleY), glm::vec3(0.0f, 1.0f, 0.0f));
+       
+            
+                 
+            glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+                
+            // do not send the normal matrix if we are rendering in the depth map
+            if (!depthPass) {
+                normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+                glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+            }
+            
+            nanosuit.Draw(shader);
+    }
+
 }
 
 
@@ -552,6 +992,32 @@ void renderScene() {
     //		 render the scene in the depth map
     //render skybox
     
+    delta += 0.001;
+    // get current time
+    currentTimeStamp = glfwGetTime();
+    double timePassedSinceBegin =  currentTimeStamp - globalBegin;
+    updateDelta(currentTimeStamp - lastTimeStamp);
+    lastTimeStamp = currentTimeStamp;
+    
+    if(state == 0 and timePassedSinceBegin > 16){
+        delta = 0;
+        state = 1;
+    }
+    else if(state == 1 and timePassedSinceBegin > 30){
+        delta = 0;
+        state = 2;
+    }
+    else if(state == 2 and timePassedSinceBegin > 32){
+        delta = 0;
+        state = 3;
+    }
+    else if(state == 3 and timePassedSinceBegin > 38){
+        state = 4;
+        delta = 0;
+    }
+    
+    
+        
     depthMapShader.useShaderProgram();
     glUniformMatrix4fv(glGetUniformLocation(depthMapShader.shaderProgram, "lightSpaceTrMatrix"),
                        1,

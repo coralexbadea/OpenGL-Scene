@@ -1,0 +1,198 @@
+# Blender MTL File: 'ModelRenderLighting2.blend'
+# Material Count: 14
+
+newmtl 24_boot-tall-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.710123 0.591902 0.605320
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd boot_tall_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump boot_tall_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks boot_tall_heavy_ge_a03reptrooper02_u_s.dds
+map_d boot_tall_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_boot-tall-bfn-heavy-tr-a02-shin_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.731950 0.601609 0.581905
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd boot_tall_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump boot_tall_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks boot_tall_heavy_ge_a03reptrooper02_u_s.dds
+map_d boot_tall_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_chest-tight-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.439816 0.615477 0.526367
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump chest_tight_heavy_ge_a03reptrooper02_f_n.dds
+map_Ks chest_tight_heavy_ge_a03reptrooper02_u_s.dds
+map_d chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_chest-tight-bfn-heavy-tr-a02-back_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.680373 0.699058 0.574796
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump chest_tight_heavy_ge_a03reptrooper02_f_n.dds
+map_Ks chest_tight_heavy_ge_a03reptrooper02_u_s.dds
+map_d chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_chest-tight-bfn-heavy-tr-a02-plate_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.616805 0.792602 0.658330
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump chest_tight_heavy_ge_a03reptrooper02_f_n.dds
+map_Ks chest_tight_heavy_ge_a03reptrooper02_u_s.dds
+map_d chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_chest-tight-bfn-heavy-tr-a02-shld_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.727966 0.518670 0.637232
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump chest_tight_heavy_ge_a03reptrooper02_f_n.dds
+map_Ks chest_tight_heavy_ge_a03reptrooper02_u_s.dds
+map_d chest_tight_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_face-trhelmet02-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.460030 0.539037 0.536516
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd face_gehelmet02_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump face_gehelmet02_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks face_gehelmet02_heavy_ge_a03reptrooper02_u_s.dds
+map_d face_gehelmet02_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_face-trhelmet02-bfn-heavy-tr-a02-back_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.570484 0.563769 0.526752
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd face_gehelmet02_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump face_gehelmet02_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks face_gehelmet02_heavy_ge_a03reptrooper02_u_s.dds
+map_d face_gehelmet02_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_hand-glove-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.710866 0.591290 0.453464
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd hand_glove_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump hand_glove_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks hand_glove_heavy_ge_a03reptrooper02_u_s.dds
+map_d hand_glove_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_hand-glove-bfn-heavy-tr-a02-bracer_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.441080 0.650875 0.410923
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd hand_glove_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump hand_glove_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks hand_glove_heavy_ge_a03reptrooper02_u_s.dds
+map_d hand_glove_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_leg-armor02-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.707670 0.779174 0.517692
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd leg_armor02_heavy_ge_a03reptrooper02_u_v01_d.dds
+map_Bump leg_armor02_heavy_ge_a03reptrooper02_f_v01_n.dds
+map_Ks leg_armor02_heavy_ge_a03reptrooper02_u_v01_s.dds
+map_d leg_armor02_heavy_ge_a03reptrooper02_u_v01_d.dds
+
+newmtl 24_waist-belt-bfn-archetype_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.456067 0.681695 0.767736
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd waist_belt_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump waist_belt_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks waist_belt_heavy_ge_a03reptrooper02_u_s.dds
+map_d waist_belt_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_waist-belt-bfn-heavy-tr-a02-back_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.594244 0.700774 0.708533
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd waist_belt_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump waist_belt_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks waist_belt_heavy_ge_a03reptrooper02_u_s.dds
+map_d waist_belt_heavy_ge_a03reptrooper02_u_d.dds
+
+newmtl 24_waist-belt-bfn-heavy-tr-a02-front_1_16_16
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.748236 0.649553 0.500315
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Kd waist_belt_heavy_ge_a03reptrooper02_u_d.dds
+map_Bump waist_belt_heavy_ge_a03reptrooper02_u_n.dds
+map_Ks waist_belt_heavy_ge_a03reptrooper02_u_s.dds
+map_d waist_belt_heavy_ge_a03reptrooper02_u_d.dds
