@@ -143,7 +143,7 @@ gps::Camera myCamera(
         glm::vec3(0.0f, 3.0f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f));
 //camera stuff
-GLfloat cameraSpeed = 0.1f;
+GLfloat cameraSpeed = 1.0f;
 float lastX = glWindowWidth / 2.0f;
 float lastY =  glWindowHeight / 2.0f;
 float yaw        = 0.0f;
@@ -158,9 +158,13 @@ GLfloat defaultLightAngle = 1.0f;
 
 int state = 0;
 bool firstPass = true;
+bool wireframe = false;
 //models
 gps::Model3D nanosuit;
 gps::Model3D alien;
+gps::Model3D tower;
+gps::Model3D gene;
+gps::Model3D sphere;
 gps::Model3D trooper;
 gps::Model3D mech;
 gps::Model3D cage;
@@ -268,6 +272,9 @@ void processMovement() {
     if (pressedKeys[GLFW_KEY_B]) {
         renderingNarative = false;
     }
+     if (pressedKeys[GLFW_KEY_V]) {
+        wireframe = wireframe? false:true;
+    }
 }
 
 void mouseCallback(GLFWwindow* window, double xpos, double ypos)
@@ -361,6 +368,8 @@ void initOpenGLState() {
 
     glEnable(GL_DEPTH_TEST); // enable depth-testing
     glDepthFunc(GL_LESS); // depth-testing interprets a smaller value as "closer"
+   
+
   //  glEnable(GL_CULL_FACE); // cull face
     //glCullFace(GL_BACK); // cull back face
     //glFrontFace(GL_CCW); // GL_CCW for counter clock-wise
@@ -373,6 +382,9 @@ void initObjects() {
     faces.push_back("textures/skybox/right.tga");faces.push_back("textures/skybox/left.tga");faces.push_back("textures/skybox/top.tga");faces.push_back("textures/skybox/bottom.tga");faces.push_back("textures/skybox/back.tga");faces.push_back("textures/skybox/front.tga"); 
     nanosuit.LoadModel("objects/nanosuit/RoboCop.obj");
     alien.LoadModel("objects/alien/alien.obj");
+    tower.LoadModel("objects/lightTower/tower.obj");
+    sphere.LoadModel("objects/lightTower/untitled.obj");
+    gene.LoadModel("objects/generator/gene.obj");
     mech.LoadModel("objects/mech/spaceship.obj");
     cage.LoadModel("objects/cage/untitled.obj");
     cage1.LoadModel("objects/cage/cage.obj");
@@ -576,6 +588,37 @@ void drawObjects(gps::Shader shader, bool depthPass) {
    myCamera.rotate(yaw, pitch);
     ///
         
+        model = glm::scale(glm::mat4(1.0f), glm::vec3(0.9f));   
+        model = glm::translate(model, glm::vec3(1.0f,-23.0f, -17.8f));
+        
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       tower.Draw(shader);
+            
+        
+       
+       
+       
+         model = glm::rotate(glm::mat4(1.0f), glm::radians(70.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::translate(model, glm::vec3(5.0f,0.0f, 15.8f));
+         model = glm::scale(model, glm::vec3(0.05f));   
+        glUniformMatrix4fv(glGetUniformLocation(shader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+
+       
+        // do not send the normal matrix if we are rendering in the depth map
+        if (!depthPass) {
+            normalMatrix = glm::mat3(glm::inverseTranspose(view * model));
+            glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, glm::value_ptr(normalMatrix));
+        }
+     
+       gene.Draw(shader);
        ///     
             
     if(renderingNarative){
@@ -987,11 +1030,12 @@ void drawObjects(gps::Shader shader, bool depthPass) {
 
 void renderScene() {
 
-    // depth maps creation pass
-    //TODO - Send the light-space transformation matrix to the depth map creation shader and
-    //		 render the scene in the depth map
-    //render skybox
-    
+
+     if(wireframe)
+        glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+    else
+        glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+        
     delta += 0.001;
     // get current time
     currentTimeStamp = glfwGetTime();
@@ -1113,13 +1157,13 @@ void renderScene() {
 
         glUniformMatrix4fv(glGetUniformLocation(lightShader.shaderProgram, "view"), 1, GL_FALSE, glm::value_ptr(view));
 
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, 1.0f * lightDir);
-        model = glm::scale(model, glm::vec3(0.05f, 0.05f, 0.05f));
-        glUniformMatrix4fv(glGetUniformLocation(lightShader.shaderProgram, "model"), 1, GL_FALSE,
-                           glm::value_ptr(model));
+        model = glm::scale(glm::mat4(1.0f), glm::vec3(1.5f));   
+        model = glm::translate(glm::mat4(1.0f), glm::vec3(1.0f,4.0f, -26.0f));
+        
+        glUniformMatrix4fv(glGetUniformLocation(lightShader.shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
 
-        lightCube.Draw(lightShader);
+      
+       sphere.Draw(lightShader);
         
        objectShader.useShaderProgram();
        projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, (float)chunkWidth * (chunk_render_distance - 1.2f));
@@ -1178,6 +1222,7 @@ int main(int argc, const char *argv[]) {
        
     while (!glfwWindowShouldClose(glWindow)) {
         processMovement();
+        
        renderScene();
         
        glfwPollEvents();
